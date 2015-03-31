@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .shape{
+            width: 100px;
+            height: 65px;
+            background-color: #B2D237;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="jquery.freetrans.css">
+    <script type='text/javascript' src='jquery.min.js'></script>
+    <script type='text/javascript' src="Matrix.js"></script>
+    <script type='text/javascript' src="jquery.freetrans.js"></script>
+</head>
+<body>
+
+    <div id="one" class="shape trans"></div>
+    <img id="two" src="https://www.baidu.com/img/bdlogo.png" class="trans" width="200" height="132"></img>
+
+    <script type="text/javascript" charset="utf-8">
+        // do a selector group
+    $('.trans').freetrans();
+
+    // updating options, chainable
+    $('#two').freetrans({
+        x: 150,
+        y: 100
+        // 'rot-origin': '50% 100%'
+    }).css({
+        border: "1px solid pink"
+    });
+
+    $('#one').freetrans({
+        matrix: "matrix(.95,.25,-.25,.95,30,50)"
+    });
+    </script>
+</body>
+</html>
